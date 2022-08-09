@@ -17,6 +17,15 @@
 		E241A7D028A135A100ACB69F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7CC28A135A100ACB69F /* RootViewController.swift */; };
 		E241A7D128A135A100ACB69F /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7CD28A135A100ACB69F /* RootBuilder.swift */; };
 		E241A7D228A135A100ACB69F /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7CE28A135A100ACB69F /* RootInteractor.swift */; };
+		E241A7D828A1F14000ACB69F /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D428A1F14000ACB69F /* MainRouter.swift */; };
+		E241A7D928A1F14000ACB69F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D528A1F14000ACB69F /* MainViewController.swift */; };
+		E241A7DA28A1F14000ACB69F /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D628A1F14000ACB69F /* MainBuilder.swift */; };
+		E241A7DB28A1F14000ACB69F /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D728A1F14000ACB69F /* MainInteractor.swift */; };
+		E2F5D66528A2575700485D0B /* MemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66128A2575700485D0B /* MemoRouter.swift */; };
+		E2F5D66628A2575700485D0B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66228A2575700485D0B /* MemoViewController.swift */; };
+		E2F5D66728A2575700485D0B /* MemoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66328A2575700485D0B /* MemoBuilder.swift */; };
+		E2F5D66828A2575700485D0B /* MemoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66428A2575700485D0B /* MemoInteractor.swift */; };
+		E2F5D66B28A27A9D00485D0B /* UINavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66A28A27A9D00485D0B /* UINavigationControllerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +43,15 @@
 		E241A7CC28A135A100ACB69F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E241A7CD28A135A100ACB69F /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		E241A7CE28A135A100ACB69F /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		E241A7D428A1F14000ACB69F /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		E241A7D528A1F14000ACB69F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E241A7D628A1F14000ACB69F /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
+		E241A7D728A1F14000ACB69F /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		E2F5D66128A2575700485D0B /* MemoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRouter.swift; sourceTree = "<group>"; };
+		E2F5D66228A2575700485D0B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		E2F5D66328A2575700485D0B /* MemoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoBuilder.swift; sourceTree = "<group>"; };
+		E2F5D66428A2575700485D0B /* MemoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoInteractor.swift; sourceTree = "<group>"; };
+		E2F5D66A28A27A9D00485D0B /* UINavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +106,7 @@
 			children = (
 				E241A7C728A1355B00ACB69F /* Application */,
 				E241A7CA28A1358B00ACB69F /* Common */,
-				E241A7C828A1356700ACB69F /* Main */,
+				E241A7C828A1356700ACB69F /* Sources */,
 				E241A7BA28A1345300ACB69F /* Assets.xcassets */,
 				E241A7BC28A1345300ACB69F /* LaunchScreen.storyboard */,
 				E241A7BF28A1345300ACB69F /* Info.plist */,
@@ -105,12 +123,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		E241A7C828A1356700ACB69F /* Main */ = {
+		E241A7C828A1356700ACB69F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E2F5D66028A2574900485D0B /* Memo */,
+				E241A7D328A1F13400ACB69F /* Main */,
 				E241A7C928A1357C00ACB69F /* Root */,
 			);
-			path = Main;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		E241A7C928A1357C00ACB69F /* Root */ = {
@@ -127,9 +147,40 @@
 		E241A7CA28A1358B00ACB69F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E2F5D66928A27A8E00485D0B /* Extensions */,
 				E241A7C528A1355800ACB69F /* AppComponent.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E241A7D328A1F13400ACB69F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E241A7D428A1F14000ACB69F /* MainRouter.swift */,
+				E241A7D528A1F14000ACB69F /* MainViewController.swift */,
+				E241A7D628A1F14000ACB69F /* MainBuilder.swift */,
+				E241A7D728A1F14000ACB69F /* MainInteractor.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E2F5D66028A2574900485D0B /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				E2F5D66128A2575700485D0B /* MemoRouter.swift */,
+				E2F5D66228A2575700485D0B /* MemoViewController.swift */,
+				E2F5D66328A2575700485D0B /* MemoBuilder.swift */,
+				E2F5D66428A2575700485D0B /* MemoInteractor.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		E2F5D66928A27A8E00485D0B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2F5D66A28A27A9D00485D0B /* UINavigationControllerExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,12 +298,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E241A7D028A135A100ACB69F /* RootViewController.swift in Sources */,
+				E241A7D828A1F14000ACB69F /* MainRouter.swift in Sources */,
+				E2F5D66528A2575700485D0B /* MemoRouter.swift in Sources */,
+				E2F5D66728A2575700485D0B /* MemoBuilder.swift in Sources */,
 				E241A7CF28A135A100ACB69F /* RootRouter.swift in Sources */,
 				E241A7D228A135A100ACB69F /* RootInteractor.swift in Sources */,
+				E2F5D66828A2575700485D0B /* MemoInteractor.swift in Sources */,
+				E241A7DA28A1F14000ACB69F /* MainBuilder.swift in Sources */,
 				E241A7C628A1355900ACB69F /* AppComponent.swift in Sources */,
+				E241A7DB28A1F14000ACB69F /* MainInteractor.swift in Sources */,
 				E241A7B228A1345100ACB69F /* AppDelegate.swift in Sources */,
+				E241A7D928A1F14000ACB69F /* MainViewController.swift in Sources */,
+				E2F5D66628A2575700485D0B /* MemoViewController.swift in Sources */,
 				E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */,
 				E241A7D128A135A100ACB69F /* RootBuilder.swift in Sources */,
+				E2F5D66B28A27A9D00485D0B /* UINavigationControllerExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

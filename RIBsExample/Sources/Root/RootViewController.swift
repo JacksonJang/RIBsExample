@@ -23,5 +23,17 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
         super.viewDidLoad()
         
         self.view.backgroundColor = .green
+        
+        print("RootViewController viewDidLoad()")
+    }
+    
+    func present(viewControllable: ViewControllable) {
+        let vc = viewControllable.uiviewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
+    func dismiss(_ animated:Bool) {
+        self.dismiss(animated: true)
     }
 }
