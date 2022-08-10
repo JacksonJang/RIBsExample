@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 
 protocol MainRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -21,6 +22,9 @@ protocol MainListener: AnyObject {
 }
 
 final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteractable, MainPresentableListener {
+    var items: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: ["test1",
+                                                                        "test2",
+                                                                        "test3"])
 
     weak var router: MainRouting?
     weak var listener: MainListener?

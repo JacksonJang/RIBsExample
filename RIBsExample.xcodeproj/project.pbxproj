@@ -21,6 +21,7 @@
 		E241A7D928A1F14000ACB69F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D528A1F14000ACB69F /* MainViewController.swift */; };
 		E241A7DA28A1F14000ACB69F /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D628A1F14000ACB69F /* MainBuilder.swift */; };
 		E241A7DB28A1F14000ACB69F /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7D728A1F14000ACB69F /* MainInteractor.swift */; };
+		E24E79F228A3D56F007BDD8F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E79F128A3D56F007BDD8F /* BaseViewController.swift */; };
 		E2F5D66528A2575700485D0B /* MemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66128A2575700485D0B /* MemoRouter.swift */; };
 		E2F5D66628A2575700485D0B /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66228A2575700485D0B /* MemoViewController.swift */; };
 		E2F5D66728A2575700485D0B /* MemoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D66328A2575700485D0B /* MemoBuilder.swift */; };
@@ -47,6 +48,7 @@
 		E241A7D528A1F14000ACB69F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E241A7D628A1F14000ACB69F /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		E241A7D728A1F14000ACB69F /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		E24E79F128A3D56F007BDD8F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E2F5D66128A2575700485D0B /* MemoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRouter.swift; sourceTree = "<group>"; };
 		E2F5D66228A2575700485D0B /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		E2F5D66328A2575700485D0B /* MemoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoBuilder.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				E2F5D66928A27A8E00485D0B /* Extensions */,
 				E241A7C528A1355800ACB69F /* AppComponent.swift */,
+				E24E79F128A3D56F007BDD8F /* BaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				E241A7CF28A135A100ACB69F /* RootRouter.swift in Sources */,
 				E241A7D228A135A100ACB69F /* RootInteractor.swift in Sources */,
 				E2F5D66828A2575700485D0B /* MemoInteractor.swift in Sources */,
+				E24E79F228A3D56F007BDD8F /* BaseViewController.swift in Sources */,
 				E241A7DA28A1F14000ACB69F /* MainBuilder.swift in Sources */,
 				E241A7C628A1355900ACB69F /* AppComponent.swift in Sources */,
 				E241A7DB28A1F14000ACB69F /* MainInteractor.swift in Sources */,
@@ -459,6 +463,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +492,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

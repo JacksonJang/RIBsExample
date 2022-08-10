@@ -7,13 +7,15 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 import UIKit
 
 protocol MainPresentableListener: AnyObject {
     func viewWillAppear()
+    var items: BehaviorRelay<[String]> { get }
 }
 
-final class MainViewController: UIViewController, MainPresentable, MainViewControllable {
+final class MainViewController: BaseViewController, MainPresentable, MainViewControllable {
     weak var listener: MainPresentableListener?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +27,10 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .blue
+        listener?.items.bind{ items in
+            for item in items {
+                print(item)
+            }
+        }.disposed(by: disposeBag)
     }
 }
