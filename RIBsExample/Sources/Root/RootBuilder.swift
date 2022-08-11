@@ -13,8 +13,7 @@ protocol RootDependency: Dependency {
 }
 
 final class RootComponent: Component<RootDependency>,
-                            MainDependency,
-                            MemoDependency {
+                            MainDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -37,13 +36,11 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
         let viewController = RootViewController()
         let interactor = RootInteractor(presenter: viewController)
         let mainBuilder = MainBuilder(dependency: component)
-        let memoBuilder = MemoBuilder(dependency: component)
         
         print("RootBuilder build()")
         
         return RootRouter(interactor: interactor,
                           viewController: viewController,
-                          mainBuilder: mainBuilder,
-                          memoBuilder: memoBuilder)
+                          mainBuilder: mainBuilder)
     }
 }

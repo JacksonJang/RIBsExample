@@ -1,34 +1,34 @@
 //
-//  MemoInteractor.swift
+//  AddInteractor.swift
 //  RIBsExample
 //
-//  Created by 장효원 on 2022/08/09.
+//  Created by 장효원 on 2022/08/11.
 //
 
 import RIBs
 import RxSwift
 
-protocol MemoRouting: ViewableRouting {
+protocol AddRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
-protocol MemoPresentable: Presentable {
-    var listener: MemoPresentableListener? { get set }
+protocol AddPresentable: Presentable {
+    var listener: AddPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol MemoListener: AnyObject {
+protocol AddListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class MemoInteractor: PresentableInteractor<MemoPresentable>, MemoInteractable, MemoPresentableListener {
+final class AddInteractor: PresentableInteractor<AddPresentable>, AddInteractable, AddPresentableListener {
 
-    weak var router: MemoRouting?
-    weak var listener: MemoListener?
+    weak var router: AddRouting?
+    weak var listener: AddListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: MemoPresentable) {
+    override init(presenter: AddPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }

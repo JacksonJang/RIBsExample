@@ -25,12 +25,10 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     var items: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: ["test1",
                                                                         "test2",
                                                                         "test3"])
-
+    
     weak var router: MainRouting?
     weak var listener: MainListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
     override init(presenter: MainPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
@@ -38,12 +36,12 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        
     }
 
     override func willResignActive() {
         super.willResignActive()
-        // TODO: Pause any business logic.
+        
     }
     
     func viewWillAppear() {

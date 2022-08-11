@@ -7,20 +7,36 @@
 
 import RIBs
 
-protocol MainInteractable: Interactable {
+protocol MainInteractable: Interactable, AddListener {
     var router: MainRouting? { get set }
     var listener: MainListener? { get set }
 }
 
-protocol MainViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+//MARK:  Used NavigationExt.swift
+protocol MainViewControllable: NavigateViewControllable {
+    
 }
 
 final class MainRouter: ViewableRouter<MainInteractable, MainViewControllable>, MainRouting {
-
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: MainInteractable, viewController: MainViewControllable) {
+    private var addRouting: AddRouting?
+    private var addBuilder:AddBuildable
+    
+    init(interactor: MainInteractable,
+         viewController: MainViewControllable,
+         addBuilder: AddBuildable) {
+        
+        self.addBuilder = addBuilder
+        
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+    
+    func attachAddView() {
+        let rib = addBuilder.build(withListener: interactor)
+        self.addRouting = rib
+        attachChild(rib)
+        
+        let vc = rib.viewControllable.uiviewController
+        viewController.push(viewController: vc, animated: true)
     }
 }

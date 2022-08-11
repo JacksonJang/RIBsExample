@@ -12,7 +12,7 @@ protocol MainDependency: Dependency {
     // created by this RIB.
 }
 
-final class MainComponent: Component<MainDependency> {
+final class MainComponent: Component<MainDependency>, AddDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -35,6 +35,8 @@ final class MainBuilder: Builder<MainDependency>, MainBuildable {
         let interactor = MainInteractor(presenter: viewController)
         interactor.listener = listener
         
-        return MainRouter(interactor: interactor, viewController: viewController)
+        let addBuilder = AddBuilder(dependency: component)
+        
+        return MainRouter(interactor: interactor, viewController: viewController, addBuilder: addBuilder)
     }
 }

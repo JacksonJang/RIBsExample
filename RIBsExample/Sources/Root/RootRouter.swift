@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol RootInteractable: Interactable, MainListener, MemoListener {
+protocol RootInteractable: Interactable, MainListener {
     var router: RootRouting? { get set }
     var listener: RootListener? { get set }
 }
@@ -20,17 +20,13 @@ protocol RootViewControllable: ViewControllable {
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
     private var mainRouting: MainRouting?
     private var mainBuilder: MainBuildable
-    private var memoRouting: MemoRouting?
-    private var memoBuilder: MemoBuildable
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: RootInteractable,
          viewController: RootViewControllable,
-         mainBuilder: MainBuildable,
-         memoBuilder: MemoBuildable) {
+         mainBuilder: MainBuildable) {
         
         self.mainBuilder = mainBuilder
-        self.memoBuilder = memoBuilder
         
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -57,22 +53,6 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
             viewController.dismiss(true)
             detachChild(mainRouting)
             self.mainRouting = nil
-        }
-    }
-    
-    func attachMemo() {
-        let rib = memoBuilder.build(withListener: interactor)
-        self.memoRouting = rib
-        attachChild(rib)
-        
-        viewController.present(viewControllable: rib.viewControllable)
-    }
-    
-    func detachMemo() {
-        if let memoRouting = memoRouting {
-            viewController.dismiss(true)
-            detachChild(memoRouting)
-            self.memoRouting = nil
         }
     }
 }
