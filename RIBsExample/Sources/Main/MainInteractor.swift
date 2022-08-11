@@ -37,6 +37,7 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     override func didBecomeActive() {
         super.didBecomeActive()
         
+        print("First Start")
     }
 
     override func willResignActive() {

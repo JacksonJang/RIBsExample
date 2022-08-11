@@ -37,6 +37,8 @@ final class MainViewController: BaseViewController, MainPresentable, MainViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Third Start")
+        
         setupUI()
     }
     

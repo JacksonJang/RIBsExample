@@ -31,6 +31,12 @@ final class MainRouter: ViewableRouter<MainInteractable, MainViewControllable>, 
         interactor.router = self
     }
     
+    override func didLoad() {
+        super.didLoad()
+        
+        print("Second Start")
+    }
+    
     func attachAddView() {
         let rib = addBuilder.build(withListener: interactor)
         self.addRouting = rib
