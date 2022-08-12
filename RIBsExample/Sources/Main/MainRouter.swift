@@ -42,7 +42,7 @@ final class MainRouter: ViewableRouter<MainInteractable, MainViewControllable>, 
         self.addRouting = rib
         attachChild(rib)
         
-        let vc = rib.viewControllable.uiviewController
-        viewController.push(viewController: vc, animated: true)
+        let viewControllable = rib.viewControllable
+        viewController.push(viewController: viewControllable, animated: true)
     }
 }

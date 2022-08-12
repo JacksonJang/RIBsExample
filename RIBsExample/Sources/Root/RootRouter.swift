@@ -7,19 +7,17 @@
 
 import RIBs
 
-protocol RootInteractable: Interactable, MainListener, SplashListener {
+protocol RootInteractable: Interactable, SplashListener {
     var router: RootRouting? { get set }
     var listener: RootListener? { get set }
 }
 
-protocol RootViewControllable: ViewControllable {
+protocol RootViewControllable: NavigateViewControllable {
     func present(viewControllable:ViewControllable)
     func dismiss(_ animated:Bool)
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
-    private var mainRouting: MainRouting?
-    private var mainBuilder: MainBuildable
     
     private var splashRouting: SplashRouting?
     private var splashBuilder: SplashBuildable
@@ -27,11 +25,8 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: RootInteractable,
          viewController: RootViewControllable,
-         mainBuilder: MainBuildable,
          splashBuilder: SplashBuildable
     ) {
-        
-        self.mainBuilder = mainBuilder
         self.splashBuilder = splashBuilder
         
         super.init(interactor: interactor, viewController: viewController)
@@ -45,29 +40,12 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         print("RootRouter didLoad")
     }
     
-    func attachMain() {
-        let rib = mainBuilder.build(withListener: interactor)
-        self.mainRouting = rib
-        attachChild(rib)
-        
-        let navi = UINavigationController(root: rib.viewControllable)
-        viewController.present(viewControllable: navi)
-    }
-    
-    func detachMain() {
-        if let mainRouting = mainRouting {
-            viewController.dismiss(true)
-            detachChild(mainRouting)
-            self.mainRouting = nil
-        }
-    }
-    
     func attachSplash() {
         let rib = splashBuilder.build(withListener: interactor)
         self.splashRouting = rib
         attachChild(rib)
         
-        let viewControllable = rib.viewControllable
-        viewController.present(viewControllable: viewControllable)
+        let navi = UINavigationController(root: rib.viewControllable)
+        viewController.present(viewControllable: navi)
     }
 }

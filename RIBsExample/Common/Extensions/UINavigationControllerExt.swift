@@ -18,16 +18,20 @@ extension UINavigationController: ViewControllable {
 }
 
 protocol NavigateViewControllable: ViewControllable {
-    func push(viewController: UIViewController, animated: Bool)
+    func push(viewController: ViewControllable, animated: Bool)
     func pop(_ animated: Bool)
 }
 
 extension NavigateViewControllable {
-    func push(viewController: UIViewController, animated: Bool) {
-        print("push")
+    func set(viewController: ViewControllable, animated: Bool = true) {
+        uiviewController.navigationController?.setViewControllers([viewController.uiviewController], animated: animated)
+    }
+    
+    func push(viewController: ViewControllable, animated: Bool = true) {
+        uiviewController.navigationController?.pushViewController(viewController.uiviewController, animated: animated)
     }
     
     func pop(_ animated: Bool) {
-        print("pop")
+        uiviewController.navigationController?.popViewController(animated: animated)
     }
 }

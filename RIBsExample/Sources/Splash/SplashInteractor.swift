@@ -9,7 +9,7 @@ import RIBs
 import RxSwift
 
 protocol SplashRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func moveToMain()
 }
 
 protocol SplashPresentable: Presentable {
@@ -18,10 +18,11 @@ protocol SplashPresentable: Presentable {
 }
 
 protocol SplashListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    
 }
 
 final class SplashInteractor: PresentableInteractor<SplashPresentable>, SplashInteractable, SplashPresentableListener {
+    
     weak var router: SplashRouting?
     weak var listener: SplashListener?
 
@@ -41,6 +42,6 @@ final class SplashInteractor: PresentableInteractor<SplashPresentable>, SplashIn
     }
     
     func moveToMain() {
-        
+        self.router?.moveToMain()
     }
 }

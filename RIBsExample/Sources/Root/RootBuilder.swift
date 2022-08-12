@@ -30,7 +30,7 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
 
     override init(dependency: RootDependency) {
         super.init(dependency: dependency)
-        print("RootBuilder init")
+
     }
 
     func build() -> LaunchRouting {
@@ -38,14 +38,10 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
         let viewController = RootViewController()
         let interactor = RootInteractor(presenter: viewController)
         
-        let mainBuilder = MainBuilder(dependency: component)
         let splashBuilder = SplashBuilder(dependency: component)
-        
-        print("RootBuilder build()")
         
         return RootRouter(interactor: interactor,
                           viewController: viewController,
-                          mainBuilder: mainBuilder,
                           splashBuilder: splashBuilder)
     }
 }

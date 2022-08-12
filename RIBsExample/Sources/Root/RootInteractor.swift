@@ -9,7 +9,6 @@ import RIBs
 import RxSwift
 
 protocol RootRouting: ViewableRouting {
-    func attachMain()
     func attachSplash()
 }
 
@@ -23,7 +22,6 @@ protocol RootListener: AnyObject {
 }
 
 final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
-
     weak var router: RootRouting?
     weak var listener: RootListener?
 
@@ -47,5 +45,9 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.willResignActive()
         
         print("RootInteractor willResignActive")
+    }
+    
+    func attachSplash() {
+        self.router?.attachSplash()
     }
 }
