@@ -10,6 +10,7 @@ import RxSwift
 
 protocol RootRouting: ViewableRouting {
     func attachMain()
+    func attachSplash()
 }
 
 protocol RootPresentable: Presentable {
@@ -39,7 +40,7 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.didBecomeActive()
         
         print("RootInteractor didBecomeActive")
-        self.router?.attachMain()
+        self.router?.attachSplash()
     }
 
     override func willResignActive() {

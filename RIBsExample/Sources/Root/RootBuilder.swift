@@ -13,7 +13,9 @@ protocol RootDependency: Dependency {
 }
 
 final class RootComponent: Component<RootDependency>,
-                            MainDependency {
+                           MainDependency,
+                           SplashDependency
+{
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -35,12 +37,15 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
         let component = RootComponent(dependency: dependency)
         let viewController = RootViewController()
         let interactor = RootInteractor(presenter: viewController)
+        
         let mainBuilder = MainBuilder(dependency: component)
+        let splashBuilder = SplashBuilder(dependency: component)
         
         print("RootBuilder build()")
         
         return RootRouter(interactor: interactor,
                           viewController: viewController,
-                          mainBuilder: mainBuilder)
+                          mainBuilder: mainBuilder,
+                          splashBuilder: splashBuilder)
     }
 }

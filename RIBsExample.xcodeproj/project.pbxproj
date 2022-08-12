@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		18BD5C53BC101BE7DE8FD45C /* Pods_RIBsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FA57E11E2F604DE79B67F5 /* Pods_RIBsExample.framework */; };
+		E223273828A6735F000AF9C5 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273428A6735F000AF9C5 /* SplashRouter.swift */; };
+		E223273928A6735F000AF9C5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273528A6735F000AF9C5 /* SplashViewController.swift */; };
+		E223273A28A6735F000AF9C5 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273628A6735F000AF9C5 /* SplashBuilder.swift */; };
+		E223273B28A6735F000AF9C5 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273728A6735F000AF9C5 /* SplashInteractor.swift */; };
+		E223273E28A6778C000AF9C5 /* splash_note.json in Resources */ = {isa = PBXBuildFile; fileRef = E223273D28A6778C000AF9C5 /* splash_note.json */; };
 		E241A7B228A1345100ACB69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B128A1345100ACB69F /* AppDelegate.swift */; };
 		E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B328A1345100ACB69F /* SceneDelegate.swift */; };
 		E241A7BB28A1345300ACB69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E241A7BA28A1345300ACB69F /* Assets.xcassets */; };
@@ -34,6 +39,11 @@
 		50E318FD61BFCDD683AF205B /* Pods-RIBsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RIBsExample.release.xcconfig"; path = "Target Support Files/Pods-RIBsExample/Pods-RIBsExample.release.xcconfig"; sourceTree = "<group>"; };
 		577405631C73B55CC6A41CB2 /* Pods-RIBsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RIBsExample.debug.xcconfig"; path = "Target Support Files/Pods-RIBsExample/Pods-RIBsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		60FA57E11E2F604DE79B67F5 /* Pods_RIBsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RIBsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E223273428A6735F000AF9C5 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		E223273528A6735F000AF9C5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		E223273628A6735F000AF9C5 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
+		E223273728A6735F000AF9C5 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		E223273D28A6778C000AF9C5 /* splash_note.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash_note.json; sourceTree = "<group>"; };
 		E241A7AE28A1345100ACB69F /* RIBsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RIBsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E241A7B128A1345100ACB69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E241A7B328A1345100ACB69F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +97,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E223273328A67328000AF9C5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E223273428A6735F000AF9C5 /* SplashRouter.swift */,
+				E223273528A6735F000AF9C5 /* SplashViewController.swift */,
+				E223273628A6735F000AF9C5 /* SplashBuilder.swift */,
+				E223273728A6735F000AF9C5 /* SplashInteractor.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		E223273C28A6777D000AF9C5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E223273D28A6778C000AF9C5 /* splash_note.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		E241A7A528A1345100ACB69F = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +140,7 @@
 				E241A7C728A1355B00ACB69F /* Application */,
 				E241A7CA28A1358B00ACB69F /* Common */,
 				E241A7C828A1356700ACB69F /* Sources */,
+				E223273C28A6777D000AF9C5 /* Resource */,
 				E241A7BA28A1345300ACB69F /* Assets.xcassets */,
 				E241A7BC28A1345300ACB69F /* LaunchScreen.storyboard */,
 				E241A7BF28A1345300ACB69F /* Info.plist */,
@@ -132,6 +162,7 @@
 			children = (
 				E2A501A128A521B300A819F1 /* Add */,
 				E241A7D328A1F13400ACB69F /* Main */,
+				E223273328A67328000AF9C5 /* Splash */,
 				E241A7C928A1357C00ACB69F /* Root */,
 			);
 			path = Sources;
@@ -258,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E241A7BE28A1345300ACB69F /* LaunchScreen.storyboard in Resources */,
+				E223273E28A6778C000AF9C5 /* splash_note.json in Resources */,
 				E241A7BB28A1345300ACB69F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +346,10 @@
 				E2A501A628A521C400A819F1 /* AddRouter.swift in Sources */,
 				E241A7D028A135A100ACB69F /* RootViewController.swift in Sources */,
 				E241A7D828A1F14000ACB69F /* MainRouter.swift in Sources */,
+				E223273828A6735F000AF9C5 /* SplashRouter.swift in Sources */,
 				E241A7CF28A135A100ACB69F /* RootRouter.swift in Sources */,
+				E223273B28A6735F000AF9C5 /* SplashInteractor.swift in Sources */,
+				E223273A28A6735F000AF9C5 /* SplashBuilder.swift in Sources */,
 				E241A7D228A135A100ACB69F /* RootInteractor.swift in Sources */,
 				E2A501A728A521C400A819F1 /* AddViewController.swift in Sources */,
 				E24E79F228A3D56F007BDD8F /* BaseViewController.swift in Sources */,
@@ -329,6 +364,7 @@
 				E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */,
 				E241A7D128A135A100ACB69F /* RootBuilder.swift in Sources */,
 				E2F5D66B28A27A9D00485D0B /* UINavigationControllerExt.swift in Sources */,
+				E223273928A6735F000AF9C5 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

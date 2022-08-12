@@ -22,7 +22,7 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = .white
         
         print("RootViewController viewDidLoad()")
     }

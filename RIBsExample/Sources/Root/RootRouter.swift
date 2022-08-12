@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol RootInteractable: Interactable, MainListener {
+protocol RootInteractable: Interactable, MainListener, SplashListener {
     var router: RootRouting? { get set }
     var listener: RootListener? { get set }
 }
@@ -21,12 +21,18 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     private var mainRouting: MainRouting?
     private var mainBuilder: MainBuildable
     
+    private var splashRouting: SplashRouting?
+    private var splashBuilder: SplashBuildable
+    
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: RootInteractable,
          viewController: RootViewControllable,
-         mainBuilder: MainBuildable) {
+         mainBuilder: MainBuildable,
+         splashBuilder: SplashBuildable
+    ) {
         
         self.mainBuilder = mainBuilder
+        self.splashBuilder = splashBuilder
         
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -54,5 +60,14 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
             detachChild(mainRouting)
             self.mainRouting = nil
         }
+    }
+    
+    func attachSplash() {
+        let rib = splashBuilder.build(withListener: interactor)
+        self.splashRouting = rib
+        attachChild(rib)
+        
+        let viewControllable = rib.viewControllable
+        viewController.present(viewControllable: viewControllable)
     }
 }

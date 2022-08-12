@@ -10,5 +10,6 @@ target 'RIBsExample' do
   pod 'RxCocoa'
   pod 'SnapKit'
   pod 'Then'
+  pod 'lottie-ios'
   
 end
