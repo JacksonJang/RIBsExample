@@ -10,6 +10,9 @@ import RxSwift
 
 protocol RootRouting: ViewableRouting {
     func attachSplash()
+    func detachSplash()
+    func attachMain()
+    func detachMain()
 }
 
 protocol RootPresentable: Presentable {
@@ -22,6 +25,7 @@ protocol RootListener: AnyObject {
 }
 
 final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
+    
     weak var router: RootRouting?
     weak var listener: RootListener?
 
@@ -50,4 +54,24 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     func attachSplash() {
         self.router?.attachSplash()
     }
+    
+    func detachSplash() {
+        self.router?.detachSplash()
+    }
+    
+    func attachMain() {
+        self.router?.attachMain()
+    }
+    
+    func detachMain() {
+        self.router?.detachMain()
+    }
+    
+    //MARK: Used SplashInteractor
+    func moveToMain() {
+        self.router?.detachSplash()
+        self.router?.attachMain()
+    }
+    
+    
 }

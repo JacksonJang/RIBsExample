@@ -9,7 +9,7 @@ import RIBs
 import RxSwift
 
 protocol SplashRouting: ViewableRouting {
-    func moveToMain()
+    
 }
 
 protocol SplashPresentable: Presentable {
@@ -18,7 +18,7 @@ protocol SplashPresentable: Presentable {
 }
 
 protocol SplashListener: AnyObject {
-    
+    func moveToMain()
 }
 
 final class SplashInteractor: PresentableInteractor<SplashPresentable>, SplashInteractable, SplashPresentableListener {
@@ -42,6 +42,6 @@ final class SplashInteractor: PresentableInteractor<SplashPresentable>, SplashIn
     }
     
     func moveToMain() {
-        self.router?.moveToMain()
+        self.listener?.moveToMain()
     }
 }

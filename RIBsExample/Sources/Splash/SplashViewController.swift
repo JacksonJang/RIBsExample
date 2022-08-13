@@ -40,7 +40,6 @@ final class SplashViewController: BaseViewController, SplashPresentable, SplashV
         animationView?.contentMode = .scaleAspectFit
         animationView?.play() { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                print("self.listener?.moveToMain()")
                 self.listener?.moveToMain()
             }
         }

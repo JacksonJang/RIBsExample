@@ -11,6 +11,9 @@ import UIKit
 
 protocol RootPresentableListener: AnyObject {
     func attachSplash()
+    func detachSplash()
+    func attachMain()
+    func detachMain()
 }
 
 final class RootViewController: BaseViewController, RootPresentable, RootViewControllable {

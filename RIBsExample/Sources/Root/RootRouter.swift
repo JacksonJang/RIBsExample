@@ -7,7 +7,10 @@
 
 import RIBs
 
-protocol RootInteractable: Interactable, SplashListener {
+protocol RootInteractable: Interactable,
+                           SplashListener,
+                           MainListener
+{
     var router: RootRouting? { get set }
     var listener: RootListener? { get set }
 }
@@ -18,16 +21,20 @@ protocol RootViewControllable: NavigateViewControllable {
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
-    
     private var splashRouting: SplashRouting?
     private var splashBuilder: SplashBuildable
+    private var mainRouting: MainRouting?
+    private var mainBuilder: MainBuildable
     
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: RootInteractable,
          viewController: RootViewControllable,
-         splashBuilder: SplashBuildable
+         splashBuilder: SplashBuildable,
+         mainBuilder: MainBuildable
     ) {
+        
         self.splashBuilder = splashBuilder
+        self.mainBuilder = mainBuilder
         
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -48,4 +55,30 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         let navi = UINavigationController(root: rib.viewControllable)
         viewController.present(viewControllable: navi)
     }
+    
+    func detachSplash() {
+        if let splashRouting = splashRouting {
+            detachChild(splashRouting)
+            viewController.dismiss(false)
+            self.splashRouting = nil
+        }
+    }
+    
+    func attachMain() {
+        let rib = mainBuilder.build(withListener: interactor)
+        self.mainRouting = rib
+        attachChild(rib)
+        
+        let navi = UINavigationController(root: rib.viewControllable)
+        viewController.present(viewControllable: navi)
+    }
+    
+    func detachMain() {
+        if let mainRouting = mainRouting {
+            detachChild(mainRouting)
+            viewController.dismiss(false)
+            self.mainRouting = nil
+        }
+    }
+    
 }

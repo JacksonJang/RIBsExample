@@ -13,6 +13,7 @@
 		E223273A28A6735F000AF9C5 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273628A6735F000AF9C5 /* SplashBuilder.swift */; };
 		E223273B28A6735F000AF9C5 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273728A6735F000AF9C5 /* SplashInteractor.swift */; };
 		E223273E28A6778C000AF9C5 /* splash_note.json in Resources */ = {isa = PBXBuildFile; fileRef = E223273D28A6778C000AF9C5 /* splash_note.json */; };
+		E223274028A79820000AF9C5 /* References.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273F28A79820000AF9C5 /* References.swift */; };
 		E241A7B228A1345100ACB69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B128A1345100ACB69F /* AppDelegate.swift */; };
 		E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B328A1345100ACB69F /* SceneDelegate.swift */; };
 		E241A7BB28A1345300ACB69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E241A7BA28A1345300ACB69F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		E223273628A6735F000AF9C5 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
 		E223273728A6735F000AF9C5 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		E223273D28A6778C000AF9C5 /* splash_note.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash_note.json; sourceTree = "<group>"; };
+		E223273F28A79820000AF9C5 /* References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = References.swift; sourceTree = "<group>"; };
 		E241A7AE28A1345100ACB69F /* RIBsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RIBsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E241A7B128A1345100ACB69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E241A7B328A1345100ACB69F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				E241A7BA28A1345300ACB69F /* Assets.xcassets */,
 				E241A7BC28A1345300ACB69F /* LaunchScreen.storyboard */,
 				E241A7BF28A1345300ACB69F /* Info.plist */,
+				E223273F28A79820000AF9C5 /* References.swift */,
 			);
 			path = RIBsExample;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				E241A7CF28A135A100ACB69F /* RootRouter.swift in Sources */,
 				E223273B28A6735F000AF9C5 /* SplashInteractor.swift in Sources */,
 				E223273A28A6735F000AF9C5 /* SplashBuilder.swift in Sources */,
+				E223274028A79820000AF9C5 /* References.swift in Sources */,
 				E241A7D228A135A100ACB69F /* RootInteractor.swift in Sources */,
 				E2A501A728A521C400A819F1 /* AddViewController.swift in Sources */,
 				E24E79F228A3D56F007BDD8F /* BaseViewController.swift in Sources */,

@@ -39,9 +39,12 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
         let interactor = RootInteractor(presenter: viewController)
         
         let splashBuilder = SplashBuilder(dependency: component)
+        let mainBuilder = MainBuilder(dependency: component)
         
         return RootRouter(interactor: interactor,
                           viewController: viewController,
-                          splashBuilder: splashBuilder)
+                          splashBuilder: splashBuilder,
+                          mainBuilder: mainBuilder
+        )
     }
 }
