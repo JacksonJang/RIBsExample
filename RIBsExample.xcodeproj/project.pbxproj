@@ -14,6 +14,8 @@
 		E223273B28A6735F000AF9C5 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273728A6735F000AF9C5 /* SplashInteractor.swift */; };
 		E223273E28A6778C000AF9C5 /* splash_note.json in Resources */ = {isa = PBXBuildFile; fileRef = E223273D28A6778C000AF9C5 /* splash_note.json */; };
 		E223274028A79820000AF9C5 /* References.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273F28A79820000AF9C5 /* References.swift */; };
+		E223274328A8F967000AF9C5 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223274228A8F967000AF9C5 /* TopView.swift */; };
+		E223274528A8FEB5000AF9C5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223274428A8FEB5000AF9C5 /* Todo.swift */; };
 		E241A7B228A1345100ACB69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B128A1345100ACB69F /* AppDelegate.swift */; };
 		E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B328A1345100ACB69F /* SceneDelegate.swift */; };
 		E241A7BB28A1345300ACB69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E241A7BA28A1345300ACB69F /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		E223273728A6735F000AF9C5 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		E223273D28A6778C000AF9C5 /* splash_note.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash_note.json; sourceTree = "<group>"; };
 		E223273F28A79820000AF9C5 /* References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = References.swift; sourceTree = "<group>"; };
+		E223274228A8F967000AF9C5 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		E223274428A8FEB5000AF9C5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		E241A7AE28A1345100ACB69F /* RIBsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RIBsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E241A7B128A1345100ACB69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E241A7B328A1345100ACB69F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,9 +117,20 @@
 		E223273C28A6777D000AF9C5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E241A7BA28A1345300ACB69F /* Assets.xcassets */,
+				E241A7BC28A1345300ACB69F /* LaunchScreen.storyboard */,
+				E241A7BF28A1345300ACB69F /* Info.plist */,
 				E223273D28A6778C000AF9C5 /* splash_note.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		E223274128A8F959000AF9C5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E223274228A8F967000AF9C5 /* TopView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E241A7A528A1345100ACB69F = {
@@ -139,14 +154,12 @@
 		E241A7B028A1345100ACB69F /* RIBsExample */ = {
 			isa = PBXGroup;
 			children = (
+				E223273F28A79820000AF9C5 /* References.swift */,
+				E223274428A8FEB5000AF9C5 /* Todo.swift */,
 				E241A7C728A1355B00ACB69F /* Application */,
 				E241A7CA28A1358B00ACB69F /* Common */,
 				E241A7C828A1356700ACB69F /* Sources */,
 				E223273C28A6777D000AF9C5 /* Resource */,
-				E241A7BA28A1345300ACB69F /* Assets.xcassets */,
-				E241A7BC28A1345300ACB69F /* LaunchScreen.storyboard */,
-				E241A7BF28A1345300ACB69F /* Info.plist */,
-				E223273F28A79820000AF9C5 /* References.swift */,
 			);
 			path = RIBsExample;
 			sourceTree = "<group>";
@@ -163,6 +176,7 @@
 		E241A7C828A1356700ACB69F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E223274128A8F959000AF9C5 /* Common */,
 				E2A501A128A521B300A819F1 /* Add */,
 				E241A7D328A1F13400ACB69F /* Main */,
 				E223273328A67328000AF9C5 /* Splash */,
@@ -360,6 +374,7 @@
 				E241A7DA28A1F14000ACB69F /* MainBuilder.swift in Sources */,
 				E241A7C628A1355900ACB69F /* AppComponent.swift in Sources */,
 				E2A501AB28A5240900A819F1 /* MainViewCell.swift in Sources */,
+				E223274528A8FEB5000AF9C5 /* Todo.swift in Sources */,
 				E241A7DB28A1F14000ACB69F /* MainInteractor.swift in Sources */,
 				E241A7B228A1345100ACB69F /* AppDelegate.swift in Sources */,
 				E2A501A928A521C400A819F1 /* AddInteractor.swift in Sources */,
@@ -368,6 +383,7 @@
 				E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */,
 				E241A7D128A135A100ACB69F /* RootBuilder.swift in Sources */,
 				E2F5D66B28A27A9D00485D0B /* UINavigationControllerExt.swift in Sources */,
+				E223274328A8F967000AF9C5 /* TopView.swift in Sources */,
 				E223273928A6735F000AF9C5 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +526,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD7RT45876;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RIBsExample/Info.plist;
+				INFOPLIST_FILE = RIBsExample/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -539,7 +555,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DD7RT45876;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RIBsExample/Info.plist;
+				INFOPLIST_FILE = RIBsExample/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

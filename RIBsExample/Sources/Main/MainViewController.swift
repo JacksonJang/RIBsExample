@@ -22,6 +22,12 @@ protocol MainPresentableListener: AnyObject {
 final class MainViewController: BaseViewController, MainPresentable, MainViewControllable {
     weak var listener: MainPresentableListener?
     
+    let topView = TopView().then{
+        $0.attachRightButton(title: "Add"){
+            print("Move to AddVC")
+        }
+    }
+    
     lazy var tableView = UITableView().then{
         $0.delegate = self
         $0.dataSource = self
@@ -44,6 +50,7 @@ final class MainViewController: BaseViewController, MainPresentable, MainViewCon
     
     private func setupUI() {
         [
+            topView,
             tableView
         ].forEach{
             self.view.addSubview($0)
@@ -53,8 +60,15 @@ final class MainViewController: BaseViewController, MainPresentable, MainViewCon
     }
     
     private func setupConstraints() {
+        topView.snp.makeConstraints{
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(60)
+        }
+        
         tableView.snp.makeConstraints{
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(topView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         
         setBindings()

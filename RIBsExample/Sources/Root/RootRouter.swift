@@ -53,6 +53,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         attachChild(rib)
         
         let navi = UINavigationController(root: rib.viewControllable)
+        navi.isNavigationBarHidden = true
         viewController.present(viewControllable: navi)
     }
     
@@ -70,6 +71,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         attachChild(rib)
         
         let navi = UINavigationController(root: rib.viewControllable)
+        navi.isNavigationBarHidden = true
         viewController.present(viewControllable: navi)
     }
     
