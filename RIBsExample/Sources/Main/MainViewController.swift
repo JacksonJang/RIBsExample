@@ -17,14 +17,15 @@ protocol MainPresentableListener: AnyObject {
     var items: BehaviorRelay<[String]> { get }
     
     func viewWillAppear()
+    func moveToAddView()
 }
 
 final class MainViewController: BaseViewController, MainPresentable, MainViewControllable {
     weak var listener: MainPresentableListener?
     
-    let topView = TopView().then{
-        $0.attachRightButton(title: "Add"){
-            print("Move to AddVC")
+    lazy var topView = TopView().then{
+        $0.attachRightButton(title: "Add"){ [weak self] in
+            self?.listener?.moveToAddView()
         }
     }
     

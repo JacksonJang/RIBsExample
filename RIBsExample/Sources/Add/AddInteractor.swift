@@ -18,11 +18,10 @@ protocol AddPresentable: Presentable {
 }
 
 protocol AddListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func save()
 }
 
 final class AddInteractor: PresentableInteractor<AddPresentable>, AddInteractable, AddPresentableListener {
-
     weak var router: AddRouting?
     weak var listener: AddListener?
 
@@ -41,5 +40,9 @@ final class AddInteractor: PresentableInteractor<AddPresentable>, AddInteractabl
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func save() {
+        self.listener?.save()
     }
 }

@@ -45,4 +45,12 @@ final class MainRouter: ViewableRouter<MainInteractable, MainViewControllable>, 
         let viewControllable = rib.viewControllable
         viewController.push(viewController: viewControllable, animated: true)
     }
+    
+    func detachAddView() {
+        if let addRouting = addRouting {
+            viewController.pop(true)
+            detachChild(addRouting)
+            self.addRouting = nil
+        }
+    }
 }

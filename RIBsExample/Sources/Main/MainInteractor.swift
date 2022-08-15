@@ -10,7 +10,8 @@ import RxSwift
 import RxCocoa
 
 protocol MainRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachAddView()
+    func detachAddView()
 }
 
 protocol MainPresentable: Presentable {
@@ -18,7 +19,7 @@ protocol MainPresentable: Presentable {
 }
 
 protocol MainListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    
 }
 
 final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteractable, MainPresentableListener {
@@ -47,5 +48,13 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     
     func viewWillAppear() {
         print("MainInteractor viewWillAppear")
+    }
+    
+    func save() {
+        self.router?.detachAddView()
+    }
+    
+    func moveToAddView() {
+        self.router?.attachAddView()
     }
 }
