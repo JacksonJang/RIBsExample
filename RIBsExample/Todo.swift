@@ -1,9 +1,8 @@
 /*
- 1. Add Todo item to UserDefaults
  
- 2. get data using UserDefaults
+ 1. Will be fixed bug when adding an data, tableView doesn't update.
  
- 3. Update AddView UI
+ 2. Update AddView UI
  
- 4. Add button that is able to align using UICollectionView
+ 3. Add button that is able to align using UICollectionView
  */

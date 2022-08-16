@@ -23,15 +23,14 @@ protocol MainListener: AnyObject {
 }
 
 final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteractable, MainPresentableListener {
-    var items: BehaviorRelay<[String]> = BehaviorRelay<[String]>(value: ["test1",
-                                                                        "test2",
-                                                                        "test3"])
+    var items: BehaviorRelay<[TodoItem]> = BehaviorRelay<[TodoItem]>(value: [])
     
     weak var router: MainRouting?
     weak var listener: MainListener?
 
     override init(presenter: MainPresentable) {
         super.init(presenter: presenter)
+        
         presenter.listener = self
     }
 
@@ -48,9 +47,25 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     
     func viewWillAppear() {
         print("MainInteractor viewWillAppear")
+        getList()
     }
     
-    func save() {
+    func getList() {
+        let data = LocalManager.shared.getTodoList()
+        if let todoList = try? JSONDecoder().decode([TodoItem].self, from: data) {
+            self.items = BehaviorRelay<[TodoItem]>.init(value: todoList)
+        } else {
+            items = BehaviorRelay<[TodoItem]>(value: [])
+        }
+    }
+    
+    func save(_ item: TodoItem) {
+        items.accept(items.value + [item])
+        
+        if let data = try? JSONEncoder().encode(items.value) {
+            LocalManager.shared.save(value: data, key: .todoList)
+        }
+        
         self.router?.detachAddView()
     }
     

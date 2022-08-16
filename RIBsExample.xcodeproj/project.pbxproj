@@ -16,6 +16,8 @@
 		E223274028A79820000AF9C5 /* References.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223273F28A79820000AF9C5 /* References.swift */; };
 		E223274328A8F967000AF9C5 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223274228A8F967000AF9C5 /* TopView.swift */; };
 		E223274528A8FEB5000AF9C5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223274428A8FEB5000AF9C5 /* Todo.swift */; };
+		E223278028ABD63B000AF9C5 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223277F28ABD63B000AF9C5 /* TodoItem.swift */; };
+		E223278528ABD6E8000AF9C5 /* LocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223278428ABD6E8000AF9C5 /* LocalManager.swift */; };
 		E241A7B228A1345100ACB69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B128A1345100ACB69F /* AppDelegate.swift */; };
 		E241A7B428A1345100ACB69F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241A7B328A1345100ACB69F /* SceneDelegate.swift */; };
 		E241A7BB28A1345300ACB69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E241A7BA28A1345300ACB69F /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		E223273F28A79820000AF9C5 /* References.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = References.swift; sourceTree = "<group>"; };
 		E223274228A8F967000AF9C5 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		E223274428A8FEB5000AF9C5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		E223277F28ABD63B000AF9C5 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		E223278428ABD6E8000AF9C5 /* LocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalManager.swift; sourceTree = "<group>"; };
 		E241A7AE28A1345100ACB69F /* RIBsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RIBsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E241A7B128A1345100ACB69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E241A7B328A1345100ACB69F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,22 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E223277C28ABD619000AF9C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E223277F28ABD63B000AF9C5 /* TodoItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E223278128ABD6D4000AF9C5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E223278428ABD6E8000AF9C5 /* LocalManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E241A7A528A1345100ACB69F = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +178,9 @@
 				E223274428A8FEB5000AF9C5 /* Todo.swift */,
 				E241A7C728A1355B00ACB69F /* Application */,
 				E241A7CA28A1358B00ACB69F /* Common */,
+				E223277C28ABD619000AF9C5 /* Models */,
 				E241A7C828A1356700ACB69F /* Sources */,
+				E223278128ABD6D4000AF9C5 /* Utils */,
 				E223273C28A6777D000AF9C5 /* Resource */,
 			);
 			path = RIBsExample;
@@ -365,6 +387,7 @@
 				E241A7D828A1F14000ACB69F /* MainRouter.swift in Sources */,
 				E223273828A6735F000AF9C5 /* SplashRouter.swift in Sources */,
 				E241A7CF28A135A100ACB69F /* RootRouter.swift in Sources */,
+				E223278528ABD6E8000AF9C5 /* LocalManager.swift in Sources */,
 				E223273B28A6735F000AF9C5 /* SplashInteractor.swift in Sources */,
 				E223273A28A6735F000AF9C5 /* SplashBuilder.swift in Sources */,
 				E223274028A79820000AF9C5 /* References.swift in Sources */,
@@ -384,6 +407,7 @@
 				E241A7D128A135A100ACB69F /* RootBuilder.swift in Sources */,
 				E2F5D66B28A27A9D00485D0B /* UINavigationControllerExt.swift in Sources */,
 				E223274328A8F967000AF9C5 /* TopView.swift in Sources */,
+				E223278028ABD63B000AF9C5 /* TodoItem.swift in Sources */,
 				E223273928A6735F000AF9C5 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

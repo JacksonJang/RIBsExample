@@ -13,7 +13,7 @@ import Then
 import SnapKit
 
 protocol AddPresentableListener: AnyObject {
-    func save()
+    func save(_ item:TodoItem)
 }
 
 final class AddViewController: BaseViewController, AddPresentable, AddViewControllable {
@@ -62,7 +62,11 @@ final class AddViewController: BaseViewController, AddPresentable, AddViewContro
     
     private func setupRx() {
         saveButton.rx.tap.bind{ [weak self] in
-            self?.listener?.save()
+            if let text = self?.textField.text {
+                let item = TodoItem(title: text)
+                
+                self?.listener?.save(item)
+            }
         }.disposed(by: disposeBag)
     }
 }

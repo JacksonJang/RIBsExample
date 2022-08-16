@@ -18,7 +18,7 @@ protocol AddPresentable: Presentable {
 }
 
 protocol AddListener: AnyObject {
-    func save()
+    func save(_ item: TodoItem)
 }
 
 final class AddInteractor: PresentableInteractor<AddPresentable>, AddInteractable, AddPresentableListener {
@@ -42,7 +42,7 @@ final class AddInteractor: PresentableInteractor<AddPresentable>, AddInteractabl
         // TODO: Pause any business logic.
     }
     
-    func save() {
-        self.listener?.save()
+    func save(_ item: TodoItem) {
+        self.listener?.save(item)
     }
 }

@@ -14,7 +14,7 @@ import UIKit
 
 
 protocol MainPresentableListener: AnyObject {
-    var items: BehaviorRelay<[String]> { get }
+    var items: BehaviorRelay<[TodoItem]> { get }
     
     func viewWillAppear()
     func moveToAddView()
@@ -47,6 +47,7 @@ final class MainViewController: BaseViewController, MainPresentable, MainViewCon
         print("Third Start")
         
         setupUI()
+        setBindings()
     }
     
     private func setupUI() {
@@ -72,12 +73,13 @@ final class MainViewController: BaseViewController, MainPresentable, MainViewCon
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
-        setBindings()
     }
     
     private func setBindings() {
-        listener?.items.bind{ items in
-            
+        listener?.items
+            .observeOn(MainScheduler.instance)
+            .bind{[weak self] _ in
+            self?.tableView.reloadData()
         }.disposed(by: disposeBag)
     }
 }
@@ -92,7 +94,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let index = indexPath.row
         let item = self.listener?.items.value[index]
         
-        cell.titleLabel.text = item
+        cell.titleLabel.text = item?.title
         
         return cell
     }
