@@ -38,6 +38,7 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
         super.didBecomeActive()
         
         print("First Start")
+        getList()
     }
 
     override func willResignActive() {
@@ -47,7 +48,6 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     
     func viewWillAppear() {
         print("MainInteractor viewWillAppear")
-        getList()
     }
     
     func getList() {
